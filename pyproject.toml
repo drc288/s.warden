@@ -1,11 +1,12 @@
 [project]
-name = "warden"
+name = "s.warden"
 version = "0.1.0"
 description = "Sistema de remediacion de incidentes con LLM"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi[standard]",
+    "groq>=1.2.0",
     "pydantic-settings",
 ]
 
