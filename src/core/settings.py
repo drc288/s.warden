@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     APPLICATION_DESCRIPTION: str = "Sistema de remediacion de incidentes con LLM"
     APPLICATION_VERSION: str = "0.1.0"
     APPLICATION_ENVIRONMENT: str = "development"
+    GROQ_API_KEY: str                                                                                    
+    GROQ_MODEL: str = "llama-3.3-70b-versatile"           
+    GROQ_TEMPERATURE: float = 0.7                                                                        
+    GROQ_TIMEOUT_SECONDS: float = 30.0
 
 
 settings = Settings()
