@@ -1,10 +1,10 @@
-from nt import replace
+from dataclasses import replace
 from src.modules.incidents.application.enums import Environment, Severity, Action
 from src.modules.incidents.domain.entities import Incident, Decision
 
 
 
-class SafePolicy:
+class SafetyPolicy:
     @staticmethod
     def enforce(incident: Incident, decision: Decision) -> Decision:
         # Critical siempre False
@@ -18,7 +18,7 @@ class SafePolicy:
         # If environment is PROD and action is ROLLBACK or SCALE_UP, always false
         if (
             incident.environment_id == Environment.PROD
-            and decision.action == {Action.ROLLBACK, Action.SCALE_UP}
+            and decision.action in {Action.ROLLBACK, Action.SCALE_UP}
         ):
             return replace(decision, safe_to_auto=False)
 
